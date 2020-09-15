@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: 2ca298597d47d6b4ca36bb84ef0f3254
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8955176162394093892
+    second: SeeUp_0
+  - first:
+      213: -8541809279131349354
+    second: SeeUp_1
+  - first:
+      213: -2303723011852020306
+    second: SeeUp_2
+  - first:
+      213: 7708066228037100791
+    second: SeeUp_3
+  - first:
+      213: -7035573794425914684
+    second: SeeUp_4
+  - first:
+      213: -2531485627017491478
+    second: SeeUp_5
+  - first:
+      213: 1191137220440718477
+    second: SeeUp_6
+  - first:
+      213: -776464104924828580
+    second: SeeUp_7
+  - first:
+      213: -709523381201351336
+    second: SeeUp_8
+  - first:
+      213: 1239087032479193131
+    second: SeeUp_9
+  - first:
+      213: 4371623184292394984
+    second: SeeUp_10
+  - first:
+      213: 4090075986348003174
+    second: SeeUp_11
+  - first:
+      213: 8209764645284841111
+    second: SeeUp_12
+  - first:
+      213: 2753742853873821482
+    second: SeeUp_13
+  - first:
+      213: -56640184455348853
+    second: SeeUp_14
+  - first:
+      213: -4271524007133252945
+    second: SeeUp_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SeeUp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1716
+        width: 724
+        height: 1411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb644731ab2d8b380800000000000000
+      internalID: -8955176162394093892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_1
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1709
+        width: 610
+        height: 1446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e8d3297b5657980800000000000000
+      internalID: -8541809279131349354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_2
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1716
+        width: 610
+        height: 1439
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5daa950288700e0800000000000000
+      internalID: -2303723011852020306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_3
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 1712
+        width: 613
+        height: 1430
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f42653356d88fa60800000000000000
+      internalID: 7708066228037100791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_4
+      rect:
+        serializedVersion: 2
+        x: 3505
+        y: 1712
+        width: 696
+        height: 1426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca3238f8ee9c5e90800000000000000
+      internalID: -7035573794425914684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_5
+      rect:
+        serializedVersion: 2
+        x: 4388
+        y: 1705
+        width: 613
+        height: 1429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb8d9f0c3b5edcd0800000000000000
+      internalID: -2531485627017491478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_6
+      rect:
+        serializedVersion: 2
+        x: 5226
+        y: 1709
+        width: 655
+        height: 1446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c7d17bdf4c78010800000000000000
+      internalID: 1191137220440718477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_7
+      rect:
+        serializedVersion: 2
+        x: 6079
+        y: 1641
+        width: 715
+        height: 1514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c2d1da2027935f0800000000000000
+      internalID: -776464104924828580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_8
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 1630
+        width: 634
+        height: 1512
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dc8a77e344726f0800000000000000
+      internalID: -709523381201351336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 70
+        width: 655
+        height: 1536
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2817b0571f123110800000000000000
+      internalID: 1239087032479193131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_10
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 0
+        width: 789
+        height: 1570
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e73c9fcf102bac30800000000000000
+      internalID: 4371623184292394984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_11
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 0
+        width: 718
+        height: 1443
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fc0ae707ed2c830800000000000000
+      internalID: 4090075986348003174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_12
+      rect:
+        serializedVersion: 2
+        x: 5260
+        y: 449
+        width: 441
+        height: 328
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79683cb9271fee170800000000000000
+      internalID: 8209764645284841111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeeUp_13
+      rect:
+        serializedVersion: 2
+        x: 6016
+        y: 492
+        width: 537
+        height: 285
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a276bef1982473620800000000000000
+      internalID: 2753742853873821482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

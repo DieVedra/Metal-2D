@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 951cd88d7e009354ab8d2b73a07c13cf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2453544633971496540
+    second: Sprite Game BG Space_0
+  - first:
+      213: 8132090777999587415
+    second: Sprite Game BG Space_1
+  - first:
+      213: -2666412720768538411
+    second: Sprite Game BG Space_2
+  - first:
+      213: 7981059404170037724
+    second: Sprite Game BG Space_3
+  - first:
+      213: -2301321042462966232
+    second: Sprite Game BG Space_4
+  - first:
+      213: 6413276477697057472
+    second: Sprite Game BG Space_5
+  - first:
+      213: -3132831378429127962
+    second: Sprite Game BG Space_6
+  - first:
+      213: 5447030615749535344
+    second: Sprite Game BG Space_7
+  - first:
+      213: -3318125098054603636
+    second: Sprite Game BG Space_8
+  - first:
+      213: 4050248119972456119
+    second: Sprite Game BG Space_9
+  - first:
+      213: 7877340247782128595
+    second: Sprite Game BG Space_10
+  - first:
+      213: 4111832665941534930
+    second: Sprite Game BG Space_11
+  - first:
+      213: 2370267799981059669
+    second: Sprite Game BG Space_12
+  - first:
+      213: 4010882215257110317
+    second: Sprite Game BG Space_13
+  - first:
+      213: -3899951531177706554
+    second: Sprite Game BG Space_14
+  - first:
+      213: 2025689398352079107
+    second: Sprite Game BG Space_15
+  - first:
+      213: 3140954614715224226
+    second: Sprite Game BG Space_16
+  - first:
+      213: 3440462164691873187
+    second: Sprite Game BG Space_17
+  - first:
+      213: 7161778604412924239
+    second: Sprite Game BG Space_18
+  - first:
+      213: 6840563293676111245
+    second: Sprite Game BG Space_19
+  - first:
+      213: -1470697399650811659
+    second: Sprite Game BG Space_20
+  - first:
+      213: 7879376885106624968
+    second: Sprite Game BG Space_21
+  - first:
+      213: 7086403021441482983
+    second: Sprite Game BG Space_22
+  - first:
+      213: -4360820420347093183
+    second: Sprite Game BG Space_23
+  - first:
+      213: 8394995213674894966
+    second: Sprite Game BG Space_24
+  - first:
+      213: 3089709308004241081
+    second: Sprite Game BG Space_25
+  - first:
+      213: 580421237890084011
+    second: Sprite Game BG Space_26
+  - first:
+      213: -4986261101605411107
+    second: Sprite Game BG Space_27
+  - first:
+      213: -4685675301643938322
+    second: Sprite Game BG Space_28
+  - first:
+      213: 123354270922387447
+    second: Sprite Game BG Space_29
+  - first:
+      213: 4309829351483784387
+    second: Sprite Game BG Space_30
+  - first:
+      213: -6597720407178446026
+    second: Sprite Game BG Space_31
+  - first:
+      213: 2820333541810797188
+    second: Sprite Game BG Space_32
+  - first:
+      213: 2205823512767997876
+    second: Sprite Game BG Space_33
+  - first:
+      213: -8251653194159206386
+    second: Sprite Game BG Space_34
+  - first:
+      213: -925410681007099360
+    second: Sprite Game BG Space_35
+  - first:
+      213: 1040405576118924344
+    second: Sprite Game BG Space_36
+  - first:
+      213: 4020052280939435451
+    second: Sprite Game BG Space_37
+  - first:
+      213: 1896293254204795670
+    second: Sprite Game BG Space_38
+  - first:
+      213: -7043788848314179254
+    second: Sprite Game BG Space_39
+  - first:
+      213: -397292085886959551
+    second: Sprite Game BG Space_40
+  - first:
+      213: 4575677338184279139
+    second: Sprite Game BG Space_41
+  - first:
+      213: 6924112906956931836
+    second: Sprite Game BG Space_42
+  - first:
+      213: -4471226728322496784
+    second: Sprite Game BG Space_43
+  - first:
+      213: -1055058433135742127
+    second: Sprite Game BG Space_44
+  - first:
+      213: 5273430217192473673
+    second: Sprite Game BG Space_45
+  - first:
+      213: 257107894599566524
+    second: Sprite Game BG Space_46
+  - first:
+      213: -303557954140807353
+    second: Sprite Game BG Space_47
+  - first:
+      213: 3731048293369801156
+    second: Sprite Game BG Space_48
+  - first:
+      213: -4735618351664893916
+    second: Sprite Game BG Space_49
+  - first:
+      213: -1957874564720501292
+    second: Sprite Game BG Space_50
+  - first:
+      213: -8915257715169326879
+    second: Sprite Game BG Space_51
+  - first:
+      213: 1984953607521280617
+    second: Sprite Game BG Space_52
+  - first:
+      213: 4943745374074100858
+    second: Sprite Game BG Space_53
+  - first:
+      213: -7372284244285194316
+    second: Sprite Game BG Space_54
+  - first:
+      213: -3957256499669486920
+    second: Sprite Game BG Space_55
+  - first:
+      213: -779711756742363865
+    second: Sprite Game BG Space_56
+  - first:
+      213: 8514674968722310337
+    second: Sprite Game BG Space_57
+  - first:
+      213: -31895345791023060
+    second: Sprite Game BG Space_58
+  - first:
+      213: 2994772952898786698
+    second: Sprite Game BG Space_59
+  - first:
+      213: -8051119203410575414
+    second: Sprite Game BG Space_60
+  - first:
+      213: -7988303243359168424
+    second: Sprite Game BG Space_61
+  - first:
+      213: 4933999248868245
+    second: Sprite Game BG Space_62
+  - first:
+      213: -8303207162736704218
+    second: Sprite Game BG Space_63
+  - first:
+      213: -6971272613052033632
+    second: Sprite Game BG Space_64
+  - first:
+      213: 4170566356737351054
+    second: Sprite Game BG Space_65
+  - first:
+      213: 9005530088538246305
+    second: Sprite Game BG Space_66
+  - first:
+      213: -8854212686608920929
+    second: Sprite Game BG Space_67
+  - first:
+      213: -8044471443546256049
+    second: Sprite Game BG Space_68
+  - first:
+      213: 8344581080725305287
+    second: Sprite Game BG Space_69
+  - first:
+      213: -7547412302316638864
+    second: Sprite Game BG Space_70
+  - first:
+      213: 5641006410146786115
+    second: Sprite Game BG Space_71
+  - first:
+      213: -6133293502631807370
+    second: Sprite Game BG Space_72
+  - first:
+      213: -9141598623644184252
+    second: Sprite Game BG Space_73
+  - first:
+      213: 3754207872407773275
+    second: Sprite Game BG Space_74
+  - first:
+      213: 4962577001663877911
+    second: Sprite Game BG Space_75
+  - first:
+      213: -8115209595594847906
+    second: Sprite Game BG Space_76
+  - first:
+      213: 6427450277713523301
+    second: Sprite Game BG Space_77
+  - first:
+      213: 3895672907579099830
+    second: Sprite Game BG Space_78
+  - first:
+      213: -5884275019043808968
+    second: Sprite Game BG Space_79
+  - first:
+      213: -4714854827165006150
+    second: Sprite Game BG Space_80
+  - first:
+      213: -4254137523940104987
+    second: Sprite Game BG Space_81
+  - first:
+      213: 3122484281208601770
+    second: Sprite Game BG Space_82
+  - first:
+      213: -8750365415037301039
+    second: Sprite Game BG Space_83
+  - first:
+      213: -4027886316098043067
+    second: Sprite Game BG Space_84
+  - first:
+      213: -3960584859159122237
+    second: Sprite Game BG Space_85
+  - first:
+      213: 1574200365004190926
+    second: Sprite Game BG Space_86
+  - first:
+      213: 7197669004018065035
+    second: Sprite Game BG Space_87
+  - first:
+      213: -158454504046549020
+    second: Sprite Game BG Space_88
+  - first:
+      213: 2404903690239803009
+    second: Sprite Game BG Space_89
+  - first:
+      213: 1665786272794201177
+    second: Sprite Game BG Space_90
+  - first:
+      213: -4202533604733790806
+    second: Sprite Game BG Space_91
+  - first:
+      213: 6129878012636553582
+    second: Sprite Game BG Space_92
+  - first:
+      213: -3068875393717479236
+    second: Sprite Game BG Space_93
+  - first:
+      213: 4608249678390037354
+    second: Sprite Game BG Space_94
+  - first:
+      213: -7702187307603135795
+    second: Sprite Game BG Space_95
+  - first:
+      213: 6323717143123619051
+    second: Sprite Game BG Space_96
+  - first:
+      213: 146325541101517124
+    second: Sprite Game BG Space_97
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Game BG Space_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 1080
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56df6c58ddbc0220800000000000000
+      internalID: 2453544633971496540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Game BG Space_1
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1920
+        width: 1080
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75835e71a7dfad070800000000000000
+      internalID: 8132090777999587415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Game BG Space_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 1080
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8220af1cffefad0800000000000000
+      internalID: -2666412720768538411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Game BG Space_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 1080
+        height: 1920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd988dc1e3b62ce60800000000000000
+      internalID: 7981059404170037724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
