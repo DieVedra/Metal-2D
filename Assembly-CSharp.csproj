@@ -55,11 +55,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SCripts\Player.cs" />
     <Compile Include="Assets\SCripts\PlayerController.cs" />
+    <Compile Include="Assets\SCripts\EnemyControl.cs" />
     <Compile Include="Assets\SCripts\PlayerShooting.cs" />
     <Compile Include="Assets\SCripts\Enemy.cs" />
     <Compile Include="Assets\SCripts\Bullet.cs" />
-    <Compile Include="Assets\SCripts\EnemyControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

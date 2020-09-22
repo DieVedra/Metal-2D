@@ -4,81 +4,282 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
-    public static EnemyControl instance = null;
+    [HideInInspector]
+    public Animator animationZomb1;
 
-    Animator animationZomb1;
     Rigidbody2D rb;
 
-    int directionOfMovement;
+    Transform target;
 
-    public float positionEnemyX;
 
-    [SerializeField]
+    //[HideInInspector]
+    //public int directionOfMovement;
+
     bool facingRight;
 
-    public float startRunFar;
-    void Start()
-    {
-        animationZomb1 = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-    }
+
+    //============================================
+
+    public float startRunDistance; 
+
+    public float attackDistanceToPlayer;  
+
+     public float distanceToStay; 
+
+    //public GameObject PointDetectPlayer;
+
+    ////======================================================
+
+    //public Transform pointAttack;
+
+    //public float attackRange;
+
+    //public LayerMask whatIsPlayer;
+
+    //========================================================
+
+    //public float timeRecharge;
+
+    //public float startTimeRecharge;
+
+    //public float health;
+
+    public float damage;
+
+    //========================================================
+
+    bool walk;
+    bool stay;
+    bool attack;
+    bool run;
+    bool runStoping;
+
+    //=========================================================
 
     [SerializeField]
-    int speed;
+    float speed;
+    [SerializeField]
+    float speedRun;
+    float speedCount;
 
+    //=========================================================
+
+    string correntState;
     
+    public const string zomb1Idle = "Zomb1_Idle";
+    public const string zomb1Walking = "Zomb1_Walking";
+    public const string zomb1StartingRun = "Zomb1_StartingRun";
+    public const string zomb1StartAttacking = "Zomb1_StartAttacking";
+    public const string zomb1Dead = "Zomb1_Dead";
+    public const string zomb1StoppingRun = "Zomb1_StoppingRun";
+    public const string zomb1EndAttacking = "Zomb1_EndAttacking";
+
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animationZomb1 = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+        speedCount = speed;
+    }
+
+
 
     private void FixedUpdate()
      {
-        rb.velocity = new Vector2(directionOfMovement * speed, rb.velocity.y);
-
-        if (!facingRight && directionOfMovement > 0)
+        if (walk && runStoping)
         {
-            Flip();
+            StopRunEnding();
         }
-        else if (facingRight && directionOfMovement < 0)
+        else if(walk)
         {
-            Flip();
+            Walk();
         }
 
-       
+        if (stay && runStoping)
+        {
+            StopRunEnding();
+        }
+        else if(stay)
+        {
+            Stay();
+            
+        }
+
+        if (attack)
+        {
+            Attack();
+        }
+
+        if (run)
+        {
+            Run();
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        positionEnemyX = transform.position.x;
+        Debug.Log(Vector2.Distance(transform.position, target.position));
 
-        if (PlayerController.instance.positionPlayerX < positionEnemyX)
+        if (Vector2.Distance(transform.position, target.position) > distanceToStay)
         {
-            directionOfMovement = -1;
+            stay = true;
+            walk = false;
             
         }
-        else if (PlayerController.instance.positionPlayerX > positionEnemyX)
+        else if(Vector2.Distance(transform.position, target.position) < distanceToStay &&
+                Vector2.Distance(transform.position, target.position) > startRunDistance)
         {
-            directionOfMovement = 1;
-        }
-        else
-        {
-            directionOfMovement = 0;
+            stay = false;
+            walk = true;
             
+        }
+        else if(
+                 !(Vector2.Distance(transform.position, target.position) < distanceToStay &&
+                   Vector2.Distance(transform.position, target.position) > startRunDistance) &&
+                 !(Vector2.Distance(transform.position, target.position) > distanceToStay)
+               )
+        {
+            stay = false;
+            walk = false;
+            
+        } 
+
+
+
+        if (Vector2.Distance(transform.position, target.position) < startRunDistance &&
+            Vector2.Distance(transform.position, target.position) > attackDistanceToPlayer)
+        {
+            run = true;
+
+            runStoping = true;
+
+
+        }
+        else run = false;
+
+
+
+        if (Vector2.Distance(transform.position, target.position) < attackDistanceToPlayer)
+        {
+            attack = true;
+            runStoping = false;
+        }
+        else attack = false;
+
+
+        if ((!facingRight && transform.position.x < target.position.x) ||
+           (facingRight && transform.position.x > target.position.x))
+        {
+            Flip();
         }
     }
+
+    void Stay()
+    {
+        speed = 0;
+
+        ChangeAnimationState(zomb1Idle);
+    }
+
+    void Walk()
+    {
+        speed = speedCount;
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+        ChangeAnimationState(zomb1Walking);
+    }
+
+    void Run()
+    {
+        ChangeAnimationState(zomb1StartingRun);
+
+        if (speed < speedRun)
+        {
+            speed += 0.1f;
+        }
+
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+        if (attack == true)
+        {
+            return;
+        }
+    }
+
+    void StopRunEnding()
+    {
+        ChangeAnimationState(zomb1StoppingRun);
+
+        if (speed > speedCount)
+        {
+            speed -= 0.1f;
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
+    void RunStopingBoolFalse()
+    {
+        runStoping = false;
+    }
+
+    void Attack()
+    {
+        speed = 0;
+
+        ChangeAnimationState(zomb1StartAttacking);
+
+        if (Player.singletone.healthPlayer <= 0)
+        {
+            ChangeAnimationState(zomb1EndAttacking);
+            Invoke("Stay", 0.3f);
+            attack = false;
+            return;
+        }
+    }
+
+    public void SendDamage()
+    {
+        Player.singletone.TakeDamage(damage);
+    }
+
 
     void Flip()
     {
+        
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
 
-        //if (directionOfMovement < 0)
-        //{
-        //    transform.eulerAngles = new Vector3(0, 180, 0);
-        //}
-        //else if (directionOfMovement > 0)
-        //{
-        //    transform.eulerAngles = new Vector3(0, 0, 0);
-        //}
+    public void ChangeAnimationState(string newState)
+    {
+        if (correntState == newState)
+        {
+            return;
+        }
+
+        animationZomb1.Play(newState);
+
+        correntState = newState;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Destruction();
+        }
+    }
+
+    void Destruction()
+    {
+        Destroy(gameObject);
     }
 }

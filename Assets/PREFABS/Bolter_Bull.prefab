@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3244882585426130236}
   - component: {fileID: 1077527536772716810}
   - component: {fileID: 2121776705506022187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bolter_Bull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

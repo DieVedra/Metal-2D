@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3244882585426130236}
   - component: {fileID: 2121776705506022187}
   - component: {fileID: 9184010087784104883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plasma_Bull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

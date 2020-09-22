@@ -101,6 +101,7 @@ public class PlayerShooting : MonoBehaviour
     public void OnShootBottonDown()
     {
         botton = true;
+
     }
     public void OnShootBottonUp()
     {
