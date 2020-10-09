@@ -14,7 +14,10 @@ public class PlayerShooting : MonoBehaviour
     public Transform pointShoot;
     public Transform pointShootUp;
 
-    //public AudioSource shotBolt;
+    public AudioSource[] shotBolt;
+    //public AudioSource shotBolt2;
+    //public AudioSource shotBolt3;
+    //public AudioSource shotBolt4;
 
     public AudioSource noAmmoBolt;
 
@@ -22,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
     public float startTimeRechBolter;
     public float startTimeRechPlasma;
 
+    [HideInInspector]
     public bool botton;
 
     private void Awake()
@@ -89,7 +93,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 if (Player.singletone.ammoBolter > 0)
                 {
-                    //shotBolt.Play();
+                    SoundBolterShootingPlayAndCheck();
                     Instantiate(bulletBolter, pointShoot.position, pointShoot.rotation);
                     Player.singletone.AmmoReducing();
                     StartTimeRechargeSlectedGun();
@@ -104,7 +108,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 if (Player.singletone.ammoBolter > 0)
                 {
-                    //shotBolt.Play();
+                    SoundBolterShootingPlayAndCheck();
                     Instantiate(bulletBolter, pointShootUp.position, Quaternion.Euler(0, 0, 90));
                     Player.singletone.AmmoReducing(); ;
                     StartTimeRechargeSlectedGun();
@@ -138,9 +142,19 @@ public class PlayerShooting : MonoBehaviour
     public void OnShootBottonUp()
     {
         botton = false;
-        //if (PlayerController.instance.plasmAnimCount)
-        //{
-        //    timeRecharge = 0 /*startTimeRechargePlasma*/;
-        //}
+    }
+
+    public void SoundBolterShootingPlayAndCheck()
+    {
+        if (Player.singletone.ammoBolter % 2 == 1)
+        {
+            shotBolt[0].Play();
+            
+        }
+        else
+        {
+            shotBolt[1].Play(); 
+        }
+
     }
 }

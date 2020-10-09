@@ -10,8 +10,6 @@ public class Bullet : MonoBehaviour
 
     public LayerMask whatIsSolid;
 
-    AudioSource shot;
-
     public float distance;
 
     public float damageBull;
@@ -26,16 +24,6 @@ public class Bullet : MonoBehaviour
             //rb.velocity = transform.right * speed;
             Invoke("DestroyOnLifetime", lifeTime);
     }
-
-    //private void OnTriggerEnter2D(Collider2D hitInfo)
-    //{
-    //    EnemyControl enemy = hitInfo.GetComponent<EnemyControl>();
-    //    if (enemy != null)
-    //    {
-    //        enemy.TakeDamage(damage_Bull);
-    //    }
-    //    Destroy(gameObject);
-    //}
 
     private void Update()
     {

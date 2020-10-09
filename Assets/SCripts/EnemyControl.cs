@@ -281,7 +281,7 @@ public class EnemyControl : MonoBehaviour
                 animationZomb1.SetTrigger("DeadTrig");
 
                 Invoke("Destruction", 3f);
-                Debug.Log(1);
+                //Debug.Log(1);
             }
         }
         else return;

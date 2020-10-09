@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlayerController : MonoBehaviour
 
     Animator animation;
     Rigidbody2D rb;
+    [HideInInspector]
+    public CinemachineVirtualCamera[] switchView;
+    //CinemachineTransposer cineTransposer;
 
     //public Transform positionPlayer;
     public float positionPlayerX;
@@ -55,6 +59,8 @@ public class PlayerController : MonoBehaviour
         animation = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         //positionPlayer = GetComponent<Transform>();
+        //cameraFollowOffset = GetComponent<CinemachineVirtualCamera>();
+        //cineTransposer = cameraFollowOffset.GetCinemachineComponent<CinemachineTransposer>();
 
     }
 
@@ -121,6 +127,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
+        if (!facingRight)
+        {
+            switchView[0].gameObject.SetActive(false);
+            switchView[1].gameObject.SetActive(true);
+        }
+        else
+        {
+            switchView[0].gameObject.SetActive(true);
+            switchView[1].gameObject.SetActive(false);
+        }
+    
     }
 
 
