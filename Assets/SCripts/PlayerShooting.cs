@@ -14,9 +14,13 @@ public class PlayerShooting : MonoBehaviour
     public Transform pointShoot;
     public Transform pointShootUp;
 
+    //public AudioSource shotBolt;
+
+    public AudioSource noAmmoBolt;
+
     public float timeRecharge;
-    public float startTimeRechargeBolter;
-    public float startTimeRechargePlasma;
+    public float startTimeRechBolter;
+    public float startTimeRechPlasma;
 
     public bool botton;
 
@@ -31,6 +35,10 @@ public class PlayerShooting : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    //private void Start()
+    //{
+    //    shotBolt = GameObject.
+    //}
 
     private void Update()
     {
@@ -42,6 +50,13 @@ public class PlayerShooting : MonoBehaviour
                 
             }
             else
+            {
+                timeRecharge -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (timeRecharge >= 0)
             {
                 timeRecharge -= Time.deltaTime;
             }
@@ -72,15 +87,32 @@ public class PlayerShooting : MonoBehaviour
         {
             if (PlayerController.instance.bulletShotUp != true)
             {
-
-                Instantiate(bulletBolter, pointShoot.position, pointShoot.rotation);
-                StartTimeRechargeSlectedGun();
+                if (Player.singletone.ammoBolter > 0)
+                {
+                    //shotBolt.Play();
+                    Instantiate(bulletBolter, pointShoot.position, pointShoot.rotation);
+                    Player.singletone.AmmoReducing();
+                    StartTimeRechargeSlectedGun();
+                }
+                else
+                {
+                    noAmmoBolt.Play();
+                }
 
             }
             else
             {
-                Instantiate(bulletBolter, pointShootUp.position, Quaternion.Euler(0, 0, 90));
-                StartTimeRechargeSlectedGun();
+                if (Player.singletone.ammoBolter > 0)
+                {
+                    //shotBolt.Play();
+                    Instantiate(bulletBolter, pointShootUp.position, Quaternion.Euler(0, 0, 90));
+                    Player.singletone.AmmoReducing(); ;
+                    StartTimeRechargeSlectedGun();
+                }
+                else
+                {
+                    noAmmoBolt.Play();
+                }
             }
         }
         
@@ -90,11 +122,11 @@ public class PlayerShooting : MonoBehaviour
     {
         if (!PlayerController.instance.plasmAnimCount)
         {
-            timeRecharge = startTimeRechargeBolter;
+            timeRecharge = startTimeRechBolter;
         }
         else
         {
-            timeRecharge = startTimeRechargePlasma;
+            timeRecharge = startTimeRechPlasma;
         }
     }
 
@@ -106,9 +138,9 @@ public class PlayerShooting : MonoBehaviour
     public void OnShootBottonUp()
     {
         botton = false;
-        if (PlayerController.instance.plasmAnimCount)
-        {
-            timeRecharge = 0 /*startTimeRechargePlasma*/;
-        }
+        //if (PlayerController.instance.plasmAnimCount)
+        //{
+        //    timeRecharge = 0 /*startTimeRechargePlasma*/;
+        //}
     }
 }

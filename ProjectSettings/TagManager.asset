@@ -20,7 +20,7 @@ TagManager:
   - 
   - Enemy
   - 
-  - 
+  - PS
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Grass
     uniqueID: 3284583437
+    locked: 0
+  - name: PS
+    uniqueID: 1278349625
     locked: 0
   - name: UI
     uniqueID: 1090697635

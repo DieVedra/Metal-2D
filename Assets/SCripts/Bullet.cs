@@ -8,7 +8,13 @@ public class Bullet : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
 
-    public float damage_Bull = 1f;
+    public LayerMask whatIsSolid;
+
+    AudioSource shot;
+
+    public float distance;
+
+    public float damageBull;
 
     public float lifeTime;
 
@@ -16,18 +22,34 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-            rb.velocity = transform.right * speed;
+
+            //rb.velocity = transform.right * speed;
             Invoke("DestroyOnLifetime", lifeTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    //private void OnTriggerEnter2D(Collider2D hitInfo)
+    //{
+    //    EnemyControl enemy = hitInfo.GetComponent<EnemyControl>();
+    //    if (enemy != null)
+    //    {
+    //        enemy.TakeDamage(damage_Bull);
+    //    }
+    //    Destroy(gameObject);
+    //}
+
+    private void Update()
     {
-        EnemyControl enemy = hitInfo.GetComponent<EnemyControl>();
-        if (enemy != null)
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance, whatIsSolid);
+        if (hitInfo.collider != null)
         {
-            enemy.TakeDamage(damage_Bull);
+            if (hitInfo.collider.CompareTag("Enemy"))
+            {
+                hitInfo.collider.GetComponent<EnemyControl>().TakeDamage(damageBull);
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
     void DestroyOnLifetime()

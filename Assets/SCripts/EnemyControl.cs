@@ -7,7 +7,6 @@ public class EnemyControl : MonoBehaviour
     [HideInInspector]
     public Animator animationZomb1;
 
-    Rigidbody2D rb;
 
     Transform target;
 
@@ -16,6 +15,8 @@ public class EnemyControl : MonoBehaviour
     //public int directionOfMovement;
 
     bool facingRight;
+
+    public float health;
 
 
     //============================================
@@ -78,7 +79,6 @@ public class EnemyControl : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animationZomb1 = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
 
         speedCount = speed;
     }
@@ -120,40 +120,41 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Vector2.Distance(transform.position, target.position));
+        //Debug.Log(Vector2.Distance(transform.position, target.position));
 
-        if (Vector2.Distance(transform.position, target.position) > distanceToStay)
+        if ((Vector2.Distance(transform.position, target.position) > distanceToStay) && health > 0)
         {
             stay = true;
             walk = false;
-            
+
         }
-        else if(Vector2.Distance(transform.position, target.position) < distanceToStay &&
-                Vector2.Distance(transform.position, target.position) > startRunDistance)
+        else if ((Vector2.Distance(transform.position, target.position) < distanceToStay &&
+                Vector2.Distance(transform.position, target.position) > startRunDistance) && health > 0)
         {
             stay = false;
             walk = true;
-            
-        }
-        else if(
-                 !(Vector2.Distance(transform.position, target.position) < distanceToStay &&
-                   Vector2.Distance(transform.position, target.position) > startRunDistance) &&
-                 !(Vector2.Distance(transform.position, target.position) > distanceToStay)
-               )
+
+        }else
+        //else if (
+        //           (!(Vector2.Distance(transform.position, target.position) < distanceToStay &&
+        //           Vector2.Distance(transform.position, target.position) > startRunDistance) &&
+        //           !(Vector2.Distance(transform.position, target.position) > distanceToStay)) && health > 0
+        //       )
         {
             stay = false;
             walk = false;
-            
-        } 
+
+        }
 
 
 
-        if (Vector2.Distance(transform.position, target.position) < startRunDistance &&
-            Vector2.Distance(transform.position, target.position) > attackDistanceToPlayer)
+        if ((Vector2.Distance(transform.position, target.position) < startRunDistance &&
+            Vector2.Distance(transform.position, target.position) > attackDistanceToPlayer) &&
+                             health > 0)
         {
-            run = true;
 
             runStoping = true;
+            run = true;
 
 
         }
@@ -161,7 +162,7 @@ public class EnemyControl : MonoBehaviour
 
 
 
-        if (Vector2.Distance(transform.position, target.position) < attackDistanceToPlayer)
+        if (Vector2.Distance(transform.position, target.position) < attackDistanceToPlayer && health > 0)
         {
             attack = true;
             runStoping = false;
@@ -270,16 +271,25 @@ public class EnemyControl : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-
-        if (health <= 0)
+        if (health > 0)
         {
-            Destruction();
+                health -= damage;
+
+            if (health == 0)
+            {
+                //ChangeAnimationState(zomb1Dead);
+                animationZomb1.SetTrigger("DeadTrig");
+
+                Invoke("Destruction", 3f);
+                Debug.Log(1);
+            }
         }
+        else return;
     }
 
     void Destruction()
     {
+
         Destroy(gameObject);
     }
 }

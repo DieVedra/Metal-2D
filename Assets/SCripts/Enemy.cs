@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     //public static Enemy instance = null;
     public float health;
+
+    EnemyControl enemyControl;
     //public float damage;
 
     //public Transform pointAttack;
@@ -21,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        EnemyControl enemyControl = GetComponent<EnemyControl>();
+        enemyControl = GetComponent<EnemyControl>();
     }
 
     //private void Awake()
@@ -39,7 +41,6 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
 
-        OnCollider
         //if (timeBtwAttack <= 0)
         //{
             //Collider2D[] toDamagePlayer = Physics2D.OverlapCircleAll(pointAttack.position, attackRange, whatIsPlayer);
