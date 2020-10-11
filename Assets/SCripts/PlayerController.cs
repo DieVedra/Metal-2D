@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     //public Transform positionPlayer;
     public float positionPlayerX;
+    public float stopCount;
 
 
     [SerializeField]
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     float moveInput;
 
     bool facingRight = true;
+
+    bool checkWalking = false;
 
     bool isGround;
     public Transform feetPos;
@@ -184,6 +187,20 @@ public class PlayerController : MonoBehaviour
              
             
             rb.velocity = Vector2.up * jumpForce;
+
+            isGround = false;
+
+            while (moveInput != 0)
+            {
+                if (moveInput > 0)
+                {
+                    moveInput -= stopCount;
+                }
+                else
+                {
+                    moveInput += stopCount;
+                }
+            }
         }
     }
 
@@ -193,13 +210,28 @@ public class PlayerController : MonoBehaviour
         {
             moveInput = getAxis;
         }
-        //Debug.Log(isGround);
-        //Debug.Log(moveInput);
     }
 
     public void MoveOnBottonUp()
     {
-        moveInput = 0;
+        if (!isGround)
+        {
+            while (moveInput != 0)
+            {
+                if (moveInput > 0)
+                {
+                    moveInput -= stopCount;
+                }
+                else
+                {
+                    moveInput += stopCount;
+                }
+            }
+        }
+        else
+        {
+            moveInput = 0;
+        }
     }
 
     public void SwitchGunBotton()
