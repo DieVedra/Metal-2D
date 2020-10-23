@@ -15,9 +15,6 @@ public class PlayerShooting : MonoBehaviour
     public Transform pointShootUp;
 
     public AudioSource[] shotBolt;
-    //public AudioSource shotBolt2;
-    //public AudioSource shotBolt3;
-    //public AudioSource shotBolt4;
 
     public AudioSource noAmmoBolt;
 

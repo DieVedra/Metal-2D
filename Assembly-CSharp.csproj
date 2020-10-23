@@ -66,8 +66,9 @@
     <Compile Include="Assets\SCripts\Paralax\ParallaxLayer.cs" />
     <Compile Include="Assets\SCripts\FrameSwitch.cs" />
     <Compile Include="Assets\SCripts\Enemy.cs" />
-    <Compile Include="Assets\SCripts\Bullet.cs" />
     <Compile Include="Assets\SCripts\CameraFlip.cs" />
+    <Compile Include="Assets\SCripts\Bullet.cs" />
+    <Compile Include="Assets\SCripts\LvlStatusBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
