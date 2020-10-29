@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
     float speedCount;
     [SerializeField]
     int jumpForce;
-    float moveInput;
+    int moveInput;
+    int moveInputInJump;
 
     bool facingRight = true;
 
@@ -109,6 +110,11 @@ public class PlayerController : MonoBehaviour
             speed = speedCount;
 
             isJumpOnWalk = false;
+
+            if (moveInputInJump != 0)
+            {
+                moveInput = moveInputInJump;
+            }
         }
 
 
@@ -185,6 +191,10 @@ public class PlayerController : MonoBehaviour
 
     void Flip()
     {
+        if (isJumping)
+        {
+            return;
+        }
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
@@ -248,13 +258,23 @@ public class PlayerController : MonoBehaviour
 
     public void MoveOnButtonDown(int getAxis)
     {
-            isWalking = true;
+        if (isJumping)
+        {
+            moveInputInJump = getAxis;
+        }
+        else
+        {
+
             moveInput = getAxis;
+        }
+
+            isWalking = true;
     }
 
     public void MoveOnButtonUp()
     {
-            isWalking = false;
+        moveInputInJump = 0;
+        isWalking = false;
     }
 
     public void SwitchGunButton()
@@ -279,7 +299,7 @@ public class PlayerController : MonoBehaviour
 
         speed -= 1.5f;
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.04f);
 
         isJumping = true;
 

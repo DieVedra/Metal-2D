@@ -275,7 +275,7 @@ public class EnemyControl : MonoBehaviour
         {
                 health -= damage;
 
-            if (health == 0)
+            if (health <= 0)
             {
                 //ChangeAnimationState(zomb1Dead);
                 animationZomb1.SetTrigger("DeadTrig");

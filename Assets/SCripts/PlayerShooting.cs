@@ -11,6 +11,12 @@ public class PlayerShooting : MonoBehaviour
     public GameObject bulletBolter;
     public GameObject bulletPlasma;
 
+    public ParticleSystem shootingBolterEffect;
+    public ParticleSystem shootingBolterEffectUp;
+
+    public ParticleSystem shootingPlasmaEffect;
+    public ParticleSystem shootingPlasmaEffectUp;
+
     public Transform pointShoot;
     public Transform pointShootUp;
 
@@ -73,13 +79,14 @@ public class PlayerShooting : MonoBehaviour
         {
             if (PlayerController.instance.bulletShotUp != true)
             {
-
+                shootingPlasmaEffect.Play();
                 Instantiate(bulletPlasma, pointShoot.position, pointShoot.rotation);
                 StartTimeRechargeSlectedGun();
 
             }
             else
             {
+                shootingPlasmaEffectUp.Play();
                 Instantiate(bulletPlasma, pointShootUp.position, Quaternion.Euler(0, 0, 90));
                 StartTimeRechargeSlectedGun();
             }
@@ -92,6 +99,7 @@ public class PlayerShooting : MonoBehaviour
                 {
                     SoundBolterShootingPlayAndCheck();
                     Instantiate(bulletBolter, pointShoot.position, pointShoot.rotation);
+                    shootingBolterEffect.Play();
                     Player.singletone.AmmoReducing();
                     StartTimeRechargeSlectedGun();
                 }
@@ -107,6 +115,7 @@ public class PlayerShooting : MonoBehaviour
                 {
                     SoundBolterShootingPlayAndCheck();
                     Instantiate(bulletBolter, pointShootUp.position, Quaternion.Euler(0, 0, 90));
+                    shootingBolterEffectUp.Play();
                     Player.singletone.AmmoReducing(); ;
                     StartTimeRechargeSlectedGun();
                 }
