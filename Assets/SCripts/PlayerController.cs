@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 
-public class PlayerController : MonoBehaviour      
+public class PlayerController : MonoBehaviour
 {
     //1. Ходьба isWalking 
     //2. Остановка !isWalking 
     //3. Прыжок isJumping isGround
     //4. Прыжок во время ходьбы с плавной остановкой в воздухе с приземлением без отпускания клавиши ходьбы isJumping && isWalking
     //5. Прыжок во время ходьбы с резкой остановкой в воздухе с приземлением и с отпусканием клавиши ходьбы isJumping && !isWalking
-    public static PlayerController instance = null; 
+    public static PlayerController instance = null;
 
-    Animator animation;
-    Rigidbody2D rb;
-    [HideInInspector]
-    public CinemachineVirtualCamera[] switchView;
-    public float positionPlayerX;
+
+    [SerializeField] private ParticleSystem _plasmagunEffectLight;
+
+    private Animator _animation;
+    private Rigidbody2D _rb;
+    
+    [SerializeField] private CinemachineVirtualCamera[] switchView;
+    public float PositionPlayerX;
     public float stopCount;
 
     public Text speedTXT;
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
     int moveInput;
     int moveInputInJump;
 
-    bool facingRight = true;
+    public bool facingRight = true;
 
     bool isWalking = false;
     bool isWalkingFixed = false;
@@ -41,21 +44,21 @@ public class PlayerController : MonoBehaviour
     bool isJumpOnWalk = false;
     bool isJumpOnWalkAndIsJumpedFixed = false;
 
-    bool isGround;
-    public Transform feetPos;
-    public Transform posJumpInMove;
-    public float checkRadius;
-    public LayerMask whatIsGround;
+    private bool _isGround;
+    [SerializeField] private Transform _feetPos;
+    [SerializeField] private Transform _posJumpInMove;
+    public float CheckRadius;
+    [SerializeField] private LayerMask _whatIsGround;
 
-    public GameObject gunBolterUI;
-    public GameObject gunPlasmUI;
+    [SerializeField] private GameObject _gunBolterUI;
+    [SerializeField] private GameObject _gunPlasmUI;
 
-    [HideInInspector]
-    public bool bulletShotUp = false;
+    [SerializeField] private GameObject _ammoBolterUI;
+    [SerializeField] private GameObject _ammoPlasmUI;
 
-    //public bool pcOrSensorControl;
+    public bool BulletShotUp = false;
 
-    public bool plasmAnimCount = false;
+    public bool PlasmAnimCount = false;
 
     private void Awake()
     {
@@ -71,39 +74,39 @@ public class PlayerController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        animation = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        _animation = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
         speedCount = speed;
     }
 
     private void Update()
     {
 
-        speedTXT.text = "speed: "  + speed.ToString() + "\n" + "isGround - " + isGround + "\n"
-                        + "\n" + "isWalking - " + isWalking + "\n"
-                        + "\n" + "isJumping - " + isJumping + "\n"
-                        + "\n" + "isJumpOnWalk - " + isJumpOnWalk + "\n";
+        //speedTXT.text = "speed: "  + speed.ToString() + "\n" + "isGround - " + isGround + "\n"
+        //                + "\n" + "isWalking - " + isWalking + "\n"
+        //                + "\n" + "isJumping - " + isJumping + "\n"
+        //                + "\n" + "isJumpOnWalk - " + isJumpOnWalk + "\n";
 
 
 
 
-        isGround = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        _isGround = Physics2D.OverlapCircle(_feetPos.position, CheckRadius, _whatIsGround);
 
-        if (isGround)
+        if (_isGround)
         {
-            animation.SetBool("isGround",true);
+            _animation.SetBool("isGround", true);
         }
         else
         {
-            animation.SetBool("isGround", false);
+            _animation.SetBool("isGround", false);
         }
 
 
-        positionPlayerX = transform.position.x;
+        PositionPlayerX = transform.position.x;
 
-        if (isJumping && isGround)
+        if (isJumping && _isGround)
         {
             isJumping = false;
 
@@ -120,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (isWalking && isGround)
+        if (isWalking && _isGround)
         {
             isWalkingFixed = true;
         }
@@ -147,14 +150,13 @@ public class PlayerController : MonoBehaviour
 
         if (isWalkingFixed)
         {
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        }
-        
-        if(isJumpOnWalkAndIsJumpedFixed)
-        {
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            RbVelocityMove();
         }
 
+        if (isJumpOnWalkAndIsJumpedFixed)
+        {
+            RbVelocityMove();
+        }
 
 
         if (!facingRight && moveInput > 0)
@@ -166,35 +168,41 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        if (!isWalking && !plasmAnimCount)
+        if (!isWalking && !PlasmAnimCount)
         {
-            animation.SetBool("isRunning", false);
-            animation.SetBool("PlasmaActive", false);
+            _animation.SetBool("isRunning", false);
+            _animation.SetBool("PlasmaActive", false);
         }
-        else if(isWalking && !plasmAnimCount)
+        else if (isWalking && !PlasmAnimCount)
         {
-            animation.SetBool("isRunning", true);
-            animation.SetBool("PlasmaActive", false);
+            _animation.SetBool("isRunning", true);
+            _animation.SetBool("PlasmaActive", false);
         }
-        else if(!isWalking && plasmAnimCount)
+        else if (!isWalking && PlasmAnimCount)
         {
-            animation.SetBool("isRunning", false);
-            animation.SetBool("PlasmaActive", true);
+            _animation.SetBool("isRunning", false);
+            _animation.SetBool("PlasmaActive", true);
         }
-        else if(isWalking && plasmAnimCount)
+        else if (isWalking && PlasmAnimCount)
         {
-            animation.SetBool("isRunning", true);
-            animation.SetBool("PlasmaActive", true);
+            _animation.SetBool("isRunning", true);
+            _animation.SetBool("PlasmaActive", true);
         }
 
     }
 
-    void Flip()
+    private void RbVelocityMove()
+    {
+        _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
+    }
+
+    private void Flip()
     {
         if (isJumping)
         {
             return;
         }
+
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
@@ -219,37 +227,30 @@ public class PlayerController : MonoBehaviour
             switchView[0].gameObject.SetActive(true);
             switchView[1].gameObject.SetActive(false);
         }
-
     }
-
-
     public void OnLookSeeButtonDown()
     {
-        if (!plasmAnimCount)
+        if (!PlasmAnimCount)
         {
-            animation.SetBool("LookUp", true);
+            _animation.SetBool("LookUp", true);
         }
         else
         {
-            animation.SetBool("LookUp", true);
-            animation.SetBool("PlasmaActive", true);
+            _animation.SetBool("LookUp", true);
+            _animation.SetBool("PlasmaActive", true);
         }
         
-        bulletShotUp = true;
+        BulletShotUp = true;
     }
 
     public void OnLookSeeBottonUp()
     {
-
-        animation.SetBool("LookUp", false);
-        bulletShotUp = false;
+        _animation.SetBool("LookUp", false);
+        BulletShotUp = false;
     }
-
-
     public void OnJumpButtonDown()
     {
-
-        if (isGround)
+        if (_isGround)
         {
             StartCoroutine(JumpCorutine());
         }
@@ -264,38 +265,44 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
             moveInput = getAxis;
         }
 
-            isWalking = true;
+        isWalking = true;
     }
 
     public void MoveOnButtonUp()
     {
         moveInputInJump = 0;
+
         isWalking = false;
     }
 
     public void SwitchGunButton()
     {
-        if (gunBolterUI.activeSelf)
+        if (_gunBolterUI.activeSelf)
         {
-            gunBolterUI.SetActive(false);
-            gunPlasmUI.SetActive(true);
-            plasmAnimCount = true;
+            _gunBolterUI.SetActive(false);
+            _gunPlasmUI.SetActive(true);
+            PlasmAnimCount = true;
+            PlasmagunEffect();
+            _ammoBolterUI.SetActive(false);
+            _ammoPlasmUI.SetActive(true);
         }
         else
         {
-            gunBolterUI.SetActive(true);
-            gunPlasmUI.SetActive(false);
-            plasmAnimCount = false;
+            _gunBolterUI.SetActive(true);
+            _gunPlasmUI.SetActive(false);
+            PlasmAnimCount = false;
+            PlasmagunEffect();
+            _ammoBolterUI.SetActive(true);
+            _ammoPlasmUI.SetActive(false);
         }
     }
 
     private IEnumerator JumpCorutine()
     {
-        rb.velocity = Vector2.up * jumpForce;
+        _rb.velocity = Vector2.up * jumpForce;
 
         speed -= 1.5f;
 
@@ -308,16 +315,31 @@ public class PlayerController : MonoBehaviour
             isJumpOnWalk = true;
         }
 
-
-        if (!plasmAnimCount)
+        if (!PlasmAnimCount)
         {
-            animation.SetTrigger("StartJumping");
+            _animation.SetTrigger("StartJumping");
         }
         else
         {
-            animation.SetBool("PlasmaActive", true);
-            animation.SetTrigger("StartJumping");
+            _animation.SetBool("PlasmaActive", true);
+            _animation.SetTrigger("StartJumping");
         }
 
+    }
+    private void PlasmagunEffect()
+    {
+        if (PlasmAnimCount && Player.singletone.ammoPlasma > 0)
+        {
+            _plasmagunEffectLight.gameObject.SetActive(true);
+        }
+        else
+        {
+            _plasmagunEffectLight.gameObject.SetActive(false);
+        }
+
+    }
+    public void StopPlasmagunEffect()
+    {
+        _plasmagunEffectLight.Stop();
     }
 }

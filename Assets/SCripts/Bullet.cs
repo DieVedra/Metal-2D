@@ -16,10 +16,13 @@ public class Bullet : MonoBehaviour
 
     public float lifeTime;
 
+    public ExplosionBull exp;
+
     
 
     private void Start()
     {
+        
 
             //rb.velocity = transform.right * speed;
             Invoke("DestroyOnLifetime", lifeTime);
@@ -33,6 +36,7 @@ public class Bullet : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 hitInfo.collider.GetComponent<EnemyControl>().TakeDamage(damageBull);
+                exp.spawnExp();
             }
             Destroy(gameObject);
         }

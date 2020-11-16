@@ -10,14 +10,9 @@ public class EnemyControl : MonoBehaviour
 
     Transform target;
 
-
-    //[HideInInspector]
-    //public int directionOfMovement;
-
     bool facingRight;
 
     public float health;
-
 
     //============================================
 
@@ -27,23 +22,7 @@ public class EnemyControl : MonoBehaviour
 
      public float distanceToStay; 
 
-    //public GameObject PointDetectPlayer;
-
     ////======================================================
-
-    //public Transform pointAttack;
-
-    //public float attackRange;
-
-    //public LayerMask whatIsPlayer;
-
-    //========================================================
-
-    //public float timeRecharge;
-
-    //public float startTimeRecharge;
-
-    //public float health;
 
     public float damage;
 
@@ -82,8 +61,6 @@ public class EnemyControl : MonoBehaviour
 
         speedCount = speed;
     }
-
-
 
     private void FixedUpdate()
      {
@@ -134,33 +111,21 @@ public class EnemyControl : MonoBehaviour
             stay = false;
             walk = true;
 
-        }else
-        //else if (
-        //           (!(Vector2.Distance(transform.position, target.position) < distanceToStay &&
-        //           Vector2.Distance(transform.position, target.position) > startRunDistance) &&
-        //           !(Vector2.Distance(transform.position, target.position) > distanceToStay)) && health > 0
-        //       )
+        }
+        else
         {
             stay = false;
             walk = false;
-
         }
-
-
 
         if ((Vector2.Distance(transform.position, target.position) < startRunDistance &&
             Vector2.Distance(transform.position, target.position) > attackDistanceToPlayer) &&
                              health > 0)
         {
-
             runStoping = true;
             run = true;
-
-
         }
         else run = false;
-
-
 
         if (Vector2.Distance(transform.position, target.position) < attackDistanceToPlayer && health > 0)
         {
@@ -284,12 +249,10 @@ public class EnemyControl : MonoBehaviour
                 //Debug.Log(1);
             }
         }
-        else return;
     }
 
     void Destruction()
     {
-
         Destroy(gameObject);
     }
 }
