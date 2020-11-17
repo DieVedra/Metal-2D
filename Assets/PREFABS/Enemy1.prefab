@@ -119,14 +119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be9986be8e157642b850395c92cf071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationZomb1: {fileID: 0}
   health: 5
-  startRunDistance: 10
-  attackDistanceToPlayer: 1.7
-  distanceToStay: 15
-  damage: 1
-  speed: 1
-  speedRun: 3
+  _startRunDistance: 10
+  _attackDistanceToPlayer: 1.8
+  _distanceToStay: 15
+  _damage: 1
+  _speed: 3
+  _speedRun: 5
 --- !u!95 &789180812
 Animator:
   serializedVersion: 3

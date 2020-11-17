@@ -58,6 +58,7 @@
     <Compile Include="Assets\SCripts\Player.cs" />
     <Compile Include="Assets\SCripts\Paralax\ParallaxCamera.cs" />
     <Compile Include="Assets\SCripts\Paralax\ParallaxBackground.cs" />
+    <Compile Include="Assets\SCripts\BolterSleeveScript.cs" />
     <Compile Include="Assets\SCripts\PlayerController.cs" />
     <Compile Include="Assets\SCripts\EnemyControl.cs" />
     <Compile Include="Assets\SCripts\PlayerShooting.cs" />
@@ -70,7 +71,8 @@
     <Compile Include="Assets\SCripts\Enemy.cs" />
     <Compile Include="Assets\SCripts\CameraFlip.cs" />
     <Compile Include="Assets\SCripts\Bullet.cs" />
-    <Compile Include="Assets\SCripts\BolterSleeveScript.cs" />
+    <Compile Include="Assets\SCripts\Granade2D.cs" />
+    <Compile Include="Assets\SCripts\CastGaranade.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

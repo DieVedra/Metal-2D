@@ -11,6 +11,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject _bulletBolter;
     [SerializeField] private GameObject _bulletPlasma;
     [SerializeField] private GameObject _sleeveBolter;
+    [SerializeField] private GameObject _granede;
 
     [SerializeField] private ParticleSystem _shootingBolterEffect;
     [SerializeField] private ParticleSystem _shootingBolterEffectUp;
@@ -30,11 +31,14 @@ public class PlayerShooting : MonoBehaviour
 
     [SerializeField] private AudioSource _shotPlasm;
 
-    [SerializeField] private float _timeRecharge;
+    [SerializeField] private float _timeRecharge = 0;
     [SerializeField] private float _startTimeRechBolter;
     [SerializeField] private float _startTimeRechPlasma;
+    private float _timeRechargeGranade = 0;
+    [SerializeField] private float _startTimeRechGranade;
 
     private bool _buttonShoot;
+    [HideInInspector] public bool PossibleToCreateGranade = true;
 
     private void Awake()
     {
@@ -50,6 +54,7 @@ public class PlayerShooting : MonoBehaviour
     private void Update()
     {
         Shooting();
+        RecharcgeGranade();
     }
 
     private void Shooting()
@@ -151,6 +156,49 @@ public class PlayerShooting : MonoBehaviour
             }
     }
 
+    private void CastGranade()
+    {
+        if (PossibleToCreateGranade)
+        {
+            if (Player.singletone.AmmoGranade > 0)
+            {
+                //SoundBolterShootingPlay();
+
+                Instantiate(_granede,
+                            _pointShoot.position,
+                            !PlayerController.instance.BulletShotUp ?
+                            (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 60) : Quaternion.Euler(0, 0, 120)) :
+                            Quaternion.Euler(0, 0, 90));
+
+                //_shootingBolterEffect.Play();
+
+                Player.singletone.GranadeReducing();
+
+                PossibleToCreateGranade = false;
+
+                _timeRechargeGranade += _startTimeRechGranade;
+            }
+            else
+            {
+                NoAmmoPlay();
+            }
+        }
+    }
+    private void RecharcgeGranade()
+    {
+        if (!PossibleToCreateGranade)
+        {
+            if (_timeRechargeGranade > 0)
+            {
+                _timeRechargeGranade -= Time.deltaTime;
+            }
+            else if(_timeRechargeGranade <= 0)
+            {
+                PossibleToCreateGranade = true;
+            }
+        }
+    }
+
     public void OnShootButtonDown()
     {
         _buttonShoot = true;
@@ -160,6 +208,13 @@ public class PlayerShooting : MonoBehaviour
     {
         _buttonShoot = false;
     }
+
+    public void CastGranadeButton()
+    {
+        CastGranade();
+    }
+
+    
 
     private void SoundBolterShootingPlay()
     {
