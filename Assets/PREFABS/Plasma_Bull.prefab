@@ -19355,7 +19355,7 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 4096
-  distance: 0.1
+  distance: 0.3
   damageBull: 10
   lifeTime: 3
   exp: {fileID: 3218230577837060686}

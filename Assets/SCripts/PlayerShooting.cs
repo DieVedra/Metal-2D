@@ -14,10 +14,10 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject _granede;
 
     [SerializeField] private ParticleSystem _shootingBolterEffect;
-    [SerializeField] private ParticleSystem _shootingBolterEffectUp;
+    //[SerializeField] private ParticleSystem _shootingBolterEffectUp;
 
     [SerializeField] private ParticleSystem _shootingPlasmaEffect;
-    [SerializeField] private ParticleSystem _shootingPlasmaEffectUp;
+    //[SerializeField] private ParticleSystem _shootingPlasmaEffectUp;
 
     [SerializeField] private Transform _pointShoot;
     [SerializeField] private Transform _pointShootUp;
@@ -110,13 +110,18 @@ public class PlayerShooting : MonoBehaviour
         {
             _shotPlasm.Play();
 
-            _shootingPlasmaEffect.Play();
-
+            //PlayerController.instance.BulletShotUp? _shootingPlasmaEffect.Play() : _shootingPlasmaEffectUp.Play();
+            Instantiate(_shootingPlasmaEffect,
+                        PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
+                        !PlayerController.instance.BulletShotUp ?
+                                                                 (PlayerController.instance.facingRight ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(-180, 90, 0)) :
+                                                                  Quaternion.Euler(-90, 90, 0)
+                       ) ;
             Instantiate(_bulletPlasma,
-                        _pointShoot.position,
+                        PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
                         !PlayerController.instance.BulletShotUp ? 
-                        (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, 180)):
-                        Quaternion.Euler(0, 0, 90));
+                                                                 (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, 180)):
+                                                                  Quaternion.Euler(0, 0, 90));
 
             StartTimeRechargeSelectedGun();
 
@@ -135,11 +140,19 @@ public class PlayerShooting : MonoBehaviour
             {
                 SoundBolterShootingPlay();
 
-                Instantiate(_bulletBolter,
-                            _pointShoot.position,
+                Instantiate(_shootingBolterEffect,
+                            PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
                             !PlayerController.instance.BulletShotUp ?
-                            (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, 180)):
-                            Quaternion.Euler(0, 0, 90));
+                                                                     (PlayerController.instance.facingRight ? Quaternion.Euler(0, 90, 0) : Quaternion.Euler(-180, 90, 0)) :
+                                                                      Quaternion.Euler(-90, 90, 0)
+                           );
+
+                Instantiate(_bulletBolter,
+                            PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
+                            !PlayerController.instance.BulletShotUp ?
+                                                                     (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, 180)):
+                                                                      Quaternion.Euler(0, 0, 90)
+                            );
 
                 Instantiate(_sleeveBolter, _pointSleeve.position,
                             !PlayerController.instance.BulletShotUp ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, 90));
@@ -165,10 +178,11 @@ public class PlayerShooting : MonoBehaviour
                 //SoundBolterShootingPlay();
 
                 Instantiate(_granede,
-                            _pointShoot.position,
+                            PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
                             !PlayerController.instance.BulletShotUp ?
-                            (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 60) : Quaternion.Euler(0, 0, 120)) :
-                            Quaternion.Euler(0, 0, 90));
+                                                                     (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 45) : Quaternion.Euler(0, 0, 135)) :
+                                                                      Quaternion.Euler(0, 0, 90)
+                            );
 
                 //_shootingBolterEffect.Play();
 

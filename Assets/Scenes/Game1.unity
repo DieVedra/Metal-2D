@@ -906,11 +906,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5006508388061802044, guid: 538891391220eca4caa517b47034f9d7, type: 3}
   m_PrefabInstance: {fileID: 5006508386916755622}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &339408559 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9202610232578864771, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
-  m_PrefabInstance: {fileID: 4383845980302253717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &343426187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093033504, guid: 538891391220eca4caa517b47034f9d7, type: 3}
@@ -3778,11 +3773,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372043121}
   m_CullTransparentMesh: 0
---- !u!198 &1385692728 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1197373245271442908, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
-  m_PrefabInstance: {fileID: 4383845980302253717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430719844
 GameObject:
   m_ObjectHideFlags: 0
@@ -5951,67 +5941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3091847367557489921
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3091847367897276987, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_Name
-      value: Granade
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276987, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 73.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -70.44321
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3091847367897276990, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
 --- !u!1001 &4383845980302253717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6021,7 +5950,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 334395518714113537, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.32
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 334395518714113537, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6029,7 +5958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 334395518714113537, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.914
+      value: 9.18
       objectReference: {fileID: 0}
     - target: {fileID: 334395518714113537, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6159,6 +6088,10 @@ PrefabInstance:
       propertyPath: _plasmagunEffectLight
       value: 
       objectReference: {fileID: 1657669198}
+    - target: {fileID: 4383845980155938885, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
+      propertyPath: BulletShotUp
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _shotBolt.Array.size
       value: 2
@@ -6182,7 +6115,7 @@ PrefabInstance:
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _shootingBolterEffect
       value: 
-      objectReference: {fileID: 339408559}
+      objectReference: {fileID: 2992187059000811215, guid: 7c5c873950f9e364285be3780986c4dd, type: 3}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _shootingBolterEffectUp
       value: 
@@ -6190,7 +6123,7 @@ PrefabInstance:
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _shootingPlasmaEffect
       value: 
-      objectReference: {fileID: 1385692728}
+      objectReference: {fileID: 5792821137957093641, guid: 678de9357d264fe428eae9979457279b, type: 3}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _shootingPlasmaEffectUp
       value: 
@@ -6250,7 +6183,7 @@ PrefabInstance:
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _granede
       value: 
-      objectReference: {fileID: 3091847367897276987, guid: 0094b8e1cc7af534d8f71da637ad7118, type: 3}
+      objectReference: {fileID: 108100845173389075, guid: 70b44a06070ee354392379b4781bfc91, type: 3}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _startTimeRechGranade
       value: 1.5

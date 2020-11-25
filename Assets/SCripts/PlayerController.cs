@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private bool _isGround;
     [SerializeField] private Transform _feetPos;
-    [SerializeField] private Transform _posJumpInMove;
+    //[SerializeField] private Transform _posJumpInMove;
     public float CheckRadius;
     [SerializeField] private LayerMask _whatIsGround;
 
