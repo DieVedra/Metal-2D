@@ -180,7 +180,7 @@ public class PlayerShooting : MonoBehaviour
                 Instantiate(_granede,
                             PlayerController.instance.BulletShotUp ? _pointShootUp.position : _pointShoot.position,
                             !PlayerController.instance.BulletShotUp ?
-                                                                     (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 45) : Quaternion.Euler(0, 0, 135)) :
+                                                                     (PlayerController.instance.facingRight ? Quaternion.Euler(0, 0, 30) : Quaternion.Euler(0, 0, 150)) :
                                                                       Quaternion.Euler(0, 0, 90)
                             );
 

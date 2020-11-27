@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: health
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 140256121, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
+      propertyPath: _attackDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 387297237909540930, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73.7
@@ -411,6 +415,10 @@ PrefabInstance:
     - target: {fileID: 387297237909540941, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 387297237909540943, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
@@ -1592,6 +1600,10 @@ PrefabInstance:
       propertyPath: health
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 140256121, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
+      propertyPath: _attackDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 387297237909540930, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 79
@@ -1656,6 +1668,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 387297237909540943, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f87010b90e6a7dd4e9d5018998e9fb79, type: 3}
 --- !u!1 &854146752
@@ -1693,6 +1709,68 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 854067366, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
   m_PrefabInstance: {fileID: 4383845980302253717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &897248095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5006508387758839445, guid: 538891391220eca4caa517b47034f9d7, type: 3}
+  m_PrefabInstance: {fileID: 5006508386916755622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &897248097
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897248095}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.551466, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.55}
+    newSize: {x: 19.2, y: 10.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09706783, y: 10.55}
+  m_EdgeRadius: 0
+--- !u!1 &899492739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5006508387303006240, guid: 538891391220eca4caa517b47034f9d7, type: 3}
+  m_PrefabInstance: {fileID: 2014187759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &899492741
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899492739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.5756, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.55}
+    newSize: {x: 19.2, y: 10.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.048802376, y: 10.55}
+  m_EdgeRadius: 0
 --- !u!1 &918341395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6150,7 +6228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _startTimeRechBolter
-      value: 0.17
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4383845980155938906, guid: 337782fecbcdb9d428acd4f2511552e7, type: 3}
       propertyPath: _noAmmoBolt

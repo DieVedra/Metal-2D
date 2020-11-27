@@ -6,11 +6,6 @@ using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
-    //1. Ходьба isWalking 
-    //2. Остановка !isWalking 
-    //3. Прыжок isJumping isGround
-    //4. Прыжок во время ходьбы с плавной остановкой в воздухе с приземлением без отпускания клавиши ходьбы isJumping && isWalking
-    //5. Прыжок во время ходьбы с резкой остановкой в воздухе с приземлением и с отпусканием клавиши ходьбы isJumping && !isWalking
     public static PlayerController instance = null;
 
 
@@ -45,10 +40,12 @@ public class PlayerController : MonoBehaviour
     bool isJumpOnWalkAndIsJumpedFixed = false;
 
     private bool _isGround;
+    private bool _isEnemy;
     [SerializeField] private Transform _feetPos;
-    //[SerializeField] private Transform _posJumpInMove;
     public float CheckRadius;
     [SerializeField] private LayerMask _whatIsGround;
+    [SerializeField] private LayerMask _whatIsEnemy;
+
 
     [SerializeField] private GameObject _gunBolterUI;
     [SerializeField] private GameObject _gunPlasmUI;
@@ -62,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        // Setting up the references.
         if (instance == null)
         {
             instance = this;
@@ -73,7 +69,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     private void Start()
     {
         _animation = GetComponent<Animator>();
@@ -89,12 +84,10 @@ public class PlayerController : MonoBehaviour
         //                + "\n" + "isJumping - " + isJumping + "\n"
         //                + "\n" + "isJumpOnWalk - " + isJumpOnWalk + "\n";
 
-
-
-
         _isGround = Physics2D.OverlapCircle(_feetPos.position, CheckRadius, _whatIsGround);
+        _isEnemy = Physics2D.OverlapCircle(_feetPos.position, CheckRadius, _whatIsEnemy);
 
-        if (_isGround)
+        if (_isGround || _isEnemy)
         {
             _animation.SetBool("isGround", true);
         }
@@ -106,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         PositionPlayerX = transform.position.x;
 
-        if (isJumping && _isGround)
+        if (isJumping && (_isGround || _isEnemy))
         {
             isJumping = false;
 
@@ -123,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (isWalking && _isGround)
+        if (isWalking && (_isGround || _isEnemy))
         {
             isWalkingFixed = true;
         }
@@ -250,7 +243,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnJumpButtonDown()
     {
-        if (_isGround)
+        if (_isGround || _isEnemy)
         {
             StartCoroutine(JumpCorutine());
         }

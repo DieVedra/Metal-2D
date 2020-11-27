@@ -16,6 +16,7 @@ public class Granade2D : MonoBehaviour
     private bool _isGround;
     private bool _isEnemy;
     private bool _playCount = true;
+    private bool _expCount = true;
     [SerializeField] private LayerMask _layerMaskEnemy;
     [SerializeField] private LayerMask _layerMaskCollision;
     [SerializeField] private AudioClip[] _audioClip; // _audioClip[0] - createsound, _audioClip[1] - collision sound,  _audioClip[2] - expload sound
@@ -32,7 +33,7 @@ public class Granade2D : MonoBehaviour
 
         if (PlayerController.instance.BulletShotUp)
         {
-            _speed *= 2f;
+            _speed *= 1.5f;
         }
         _rb.AddForce(transform.right * _speed);
 
@@ -54,7 +55,7 @@ public class Granade2D : MonoBehaviour
             _playCount = true;
         }
 
-        if (_isEnemy)
+        if (_isEnemy && _expCount)
         {
             ExplosionGranate2D();
         }
@@ -81,6 +82,8 @@ public class Granade2D : MonoBehaviour
     }
     private void ExplosionGranate2D()
     {
+        _expCount = false;
+
         Collider2D[] overlappedColliders = Physics2D.OverlapCircleAll(transform.position, _radius, _layerMaskEnemy);
 
         foreach (Collider2D hit in overlappedColliders)
@@ -96,6 +99,7 @@ public class Granade2D : MonoBehaviour
                 hit.GetComponent<EnemyControl>().TakeDamage(_damageGranade);
             }
         }
+
         Instantiate(_pS, transform.position, Quaternion.Euler(0, 0, 0));
         _audioSource.clip = _audioClip[2];
         _audioSource.Play();
